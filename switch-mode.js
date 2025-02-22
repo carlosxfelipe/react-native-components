@@ -27,6 +27,20 @@ if (mode === "storybook") {
 } else if (mode === "build") {
   console.log("🚀 Alternando para modo Build...");
 
+  // Remove dependências desnecessárias do pacote publicado
+  const dependenciesToRemove = [
+    "@expo/metro-runtime",
+    "expo",
+    "expo-constants",
+    "@expo/vector-icons",
+    "react-native-web",
+  ];
+  dependenciesToRemove.forEach((dep) => {
+    if (packageJson.dependencies?.[dep]) {
+      delete packageJson.dependencies[dep];
+    }
+  });
+
   // Move `react`, `react-dom` e `react-native` para `peerDependencies`
   packageJson.peerDependencies = packageJson.peerDependencies || {};
   packageJson.peerDependencies["react"] = ">=18.2.0";
