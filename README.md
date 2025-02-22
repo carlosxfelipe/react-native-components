@@ -60,13 +60,16 @@ export default App;
 
 ## 🎯 Available Props
 
-| Property         | Type          | Default                  | Description                    |
-| ---------------- | ------------- | ------------------------ | ------------------------------ | ----------------------------------------- |
-| `images`         | `{ id: string | number, uri: string }[]` | **required**                   | List of images for the carousel.          |
-| `height`         | `number`      | `180`                    | Carousel height.               |
-| `onPressImage`   | `(id: string  | number) => void`         | `undefined`                    | Function called when an image is pressed. |
-| `showIndicators` | `boolean`     | `false`                  | Show progress indicators.      |
-| `indicatorColor` | `string`      | `"#000"`                 | Color of the active indicator. |
+- **`images`** (`{ id: string | number, uri: string }[]`): **Required**  
+  List of images for the carousel.
+- **`height`** (`number`, default: `180`):  
+  Defines the height of the carousel.
+- **`onPressImage`** (`(id: string | number) => void`, default: `undefined`):  
+  Function called when an image is pressed.
+- **`showIndicators`** (`boolean`, default: `false`):  
+  Enables or disables progress indicators.
+- **`indicatorColor`** (`string`, default: `"#000"`):  
+  Defines the color of the active indicator.
 
 ## 📜 License
 
