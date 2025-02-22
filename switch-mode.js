@@ -40,14 +40,33 @@ if (mode === "storybook") {
     delete packageJson.dependencies["react-native"];
   }
 
+  // Adiciona `react-native` em `devDependencies` para que TypeScript funcione no build
+  packageJson.devDependencies = packageJson.devDependencies || {};
+  packageJson.devDependencies["react-native"] = "0.74.5";
+
   // Adiciona `main` e `types` para o Build
   packageJson.main = "dist/index.js";
   packageJson.types = "dist/index.d.ts";
+
+  // Move Storybook para `optionalDependencies` (para não ser instalado por usuários)
+  packageJson.optionalDependencies = packageJson.optionalDependencies || {};
+  const storybookPackages = [
+    "@storybook/addon-ondevice-actions",
+    "@storybook/addon-ondevice-controls",
+    "@storybook/react-native",
+  ];
+  storybookPackages.forEach((pkg) => {
+    if (packageJson.devDependencies?.[pkg]) {
+      packageJson.optionalDependencies[pkg] = packageJson.devDependencies[pkg];
+      delete packageJson.devDependencies[pkg];
+    }
+  });
 } else {
   console.error("❌ Modo inválido! Use 'storybook' ou 'build'.");
   process.exit(1);
 }
 
+// Salva as alterações no package.json
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + "\n");
 
 console.log(`✅ Modo ${mode} configurado com sucesso!`);
