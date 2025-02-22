@@ -1,8 +1,16 @@
 {
   "name": "@carlosxfelipe/components",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.6",
+  "private": false,
   "packageManager": "yarn@4.5.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlosxfelipe/react-native-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/carlosxfelipe/react-native-components/issues"
+  },
+  "homepage": "https://github.com/carlosxfelipe/react-native-components#readme",
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
     "@expo/vector-icons": "^14.0.3",

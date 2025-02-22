@@ -1,20 +1,20 @@
 # @carlosxfelipe/components
 
-## 📌 Instalação
+## 📌 Installation
 
-Para instalar este pacote, use o npm ou yarn:
+To install this package, use npm or yarn:
 
 ```sh
 npm install @carlosxfelipe/components
-# ou
+# or
 yarn add @carlosxfelipe/components
 ```
 
-## 🚀 Como Usar o Carousel
+## 🚀 How to Use the Carousel
 
-Este pacote inclui um componente `Carousel` que permite exibir imagens em um carrossel no React Native.
+This package includes a `Carousel` component that allows displaying images in a React Native carousel.
 
-### Exemplo de Uso:
+### Usage Example:
 
 ```tsx
 import React from "react";
@@ -58,16 +58,16 @@ const App = () => {
 export default App;
 ```
 
-## 🎯 Props Disponíveis
+## 🎯 Available Props
 
-| Propriedade      | Tipo          | Padrão                   | Descrição                        |
-| ---------------- | ------------- | ------------------------ | -------------------------------- | -------------------------------------- |
-| `images`         | `{ id: string | number, uri: string }[]` | **obrigatório**                  | Lista de imagens para o carrossel.     |
-| `height`         | `number`      | `180`                    | Altura do carrossel.             |
-| `onPressImage`   | `(id: string  | number) => void`         | `undefined`                      | Função chamada ao tocar em uma imagem. |
-| `showIndicators` | `boolean`     | `false`                  | Exibir indicadores de progresso. |
-| `indicatorColor` | `string`      | `"#000"`                 | Cor do indicador ativo.          |
+| Property         | Type          | Default                  | Description                    |
+| ---------------- | ------------- | ------------------------ | ------------------------------ | ----------------------------------------- |
+| `images`         | `{ id: string | number, uri: string }[]` | **required**                   | List of images for the carousel.          |
+| `height`         | `number`      | `180`                    | Carousel height.               |
+| `onPressImage`   | `(id: string  | number) => void`         | `undefined`                    | Function called when an image is pressed. |
+| `showIndicators` | `boolean`     | `false`                  | Show progress indicators.      |
+| `indicatorColor` | `string`      | `"#000"`                 | Color of the active indicator. |
 
-## 📜 Licença
+## 📜 License
 
-MIT License. Feito por [@carlosxfelipe](https://github.com/carlosxfelipe).
+MIT License. Created by [@carlosxfelipe](https://github.com/carlosxfelipe).
