@@ -3,7 +3,7 @@ node_modules
 .expo
 .git
 *.log
-src/assets/
+src/
 LICENSE
 switch-mode.js
 App.jsx
