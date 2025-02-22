@@ -3,3 +3,12 @@ node_modules
 .expo
 .git
 *.log
+src/assets/
+LICENSE
+switch-mode.js
+App.jsx
+app.config.js
+babel.config.js
+metro.config.js
+tsconfig.json
+.yarnrc.yml
