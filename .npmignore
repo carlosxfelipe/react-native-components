@@ -8,6 +8,7 @@ src
 *.log
 .yarnrc.yml
 App.jsx
+app.config.js
 babel.config.js
 metro.config.js
 switch-mode.js
