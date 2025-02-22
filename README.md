@@ -17,45 +17,25 @@ This package includes a `Carousel` component that allows displaying images in a 
 ### Usage Example:
 
 ```tsx
-import React from "react";
 import { View } from "react-native";
 import { Carousel } from "@carlosxfelipe/components";
 
-const images = [
-  { id: 1, uri: require("../../assets/pexels-78563786-10764538.jpg") },
-  { id: 2, uri: require("../../assets/pexels-edwardeyer-1066859.jpg") },
-  {
-    id: 3,
-    uri: require("../../assets/pexels-henry-de-guzman-72935623-10134616.jpg"),
-  },
-  {
-    id: 4,
-    uri: require("../../assets/pexels-moises-ribeiro-121009898-11462903.jpg"),
-  },
-  {
-    id: 5,
-    uri: require("../../assets/pexels-polina-tankilevitch-4109121.jpg"),
-  },
-  {
-    id: 6,
-    uri: require("../../assets/pexels-tadahiro-munakata-384728139-18338973.jpg"),
-  },
+const carouselImages = [
+  { id: 1, uri: require("./pexels-78563786-10764538.jpg") },
+  { id: 2, uri: require("./pexels-edwardeyer-1066859.jpg") },
+  { id: 3, uri: require("./pexels-henry-de-guzman-72935623-10134616.jpg") },
+  { id: 4, uri: require("./pexels-moises-ribeiro-121009898-11462903.jpg") },
+  { id: 5, uri: require("./pexels-polina-tankilevitch-4109121.jpg") },
+  { id: 6, uri: require("./pexels-tadahiro-munakata-384728139-18338973.jpg") },
 ];
 
-const App = () => {
+export const HomeScreen: React.FC = () => {
   return (
-    <View>
-      <Carousel
-        images={images}
-        height={200}
-        showIndicators
-        indicatorColor="blue"
-      />
+    <View style={{ marginTop: 80 }}>
+      <Carousel images={carouselImages} showIndicators indicatorColor="red" />
     </View>
   );
 };
-
-export default App;
 ```
 
 ## 🎯 Available Props
@@ -73,4 +53,4 @@ export default App;
 
 ## 📜 License
 
-MIT License. Created by [@carlosxfelipe](https://github.com/carlosxfelipe).
+MIT License.
