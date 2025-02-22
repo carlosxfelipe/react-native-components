@@ -24,6 +24,38 @@ if (mode === "storybook") {
   // Remove `main` e `types` para o Storybook funcionar
   delete packageJson.main;
   delete packageJson.types;
+
+  // Restaurando dependências removidas anteriormente
+  const dependenciesToRestore = {
+    "@expo/metro-runtime": "~3.2.3",
+    "@expo/vector-icons": "^14.0.3",
+    "@types/react": "~18.2.79",
+    expo: "~51.0.39",
+    "expo-constants": "~16.0.2",
+    "react-native-web": "^0.19.10",
+  };
+
+  Object.entries(dependenciesToRestore).forEach(([dep, version]) => {
+    packageJson.dependencies[dep] = version;
+  });
+
+  const devDependenciesToRestore = {
+    "cross-env": "^7.0.3",
+    "@gorhom/bottom-sheet": "^4.6.4",
+    "@react-native-async-storage/async-storage": "1.23.1",
+    "@react-native-community/datetimepicker": "8.0.1",
+    "@react-native-community/slider": "4.5.2",
+    "babel-loader": "^9.1.3",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-safe-area-context": "4.10.5",
+    "react-native-svg": "15.2.0",
+  };
+
+  packageJson.devDependencies = packageJson.devDependencies || {};
+  Object.entries(devDependenciesToRestore).forEach(([dep, version]) => {
+    packageJson.devDependencies[dep] = version;
+  });
 } else if (mode === "build") {
   console.log("🚀 Alternando para modo Build...");
 
