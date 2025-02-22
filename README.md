@@ -12,6 +12,10 @@ yarn add @carlosxfelipe/components
 
 ## 🚀 How to Use the Carousel
 
+<p align="center">
+  <img src="./124shots_so.png" alt="Preview do Projeto" />
+</p>
+
 This package includes a `Carousel` component that allows displaying images in a React Native carousel.
 
 ### Usage Example:
