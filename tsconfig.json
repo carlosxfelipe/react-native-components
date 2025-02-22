@@ -10,13 +10,9 @@
     "skipLibCheck": true,
     "noEmit": false,
     "jsx": "react-native",
-    "types": [
-      "react-native"
-    ]
+    "types": ["react-native"]
   },
-  "include": [
-    "src/components"
-  ],
+  "include": ["src/components"],
   "exclude": [
     "src/components/**/*.stories.jsx",
     "src/components/**/*.stories.tsx",
