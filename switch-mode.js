@@ -34,6 +34,7 @@ if (mode === "storybook") {
     "expo-constants",
     "@expo/vector-icons",
     "react-native-web",
+    "@types/react",
   ];
   dependenciesToRemove.forEach((dep) => {
     if (packageJson.dependencies?.[dep]) {
@@ -57,6 +58,7 @@ if (mode === "storybook") {
   // Adiciona `react-native` em `devDependencies` para que TypeScript funcione no build
   packageJson.devDependencies = packageJson.devDependencies || {};
   packageJson.devDependencies["react-native"] = "0.74.5";
+  packageJson.devDependencies["@types/react"] = "^18.2.0";
 
   // Adiciona `main` e `types` para o Build
   packageJson.main = "dist/index.js";
@@ -75,6 +77,22 @@ if (mode === "storybook") {
       delete packageJson.devDependencies[pkg];
     }
   });
+
+  // Mantém apenas as devDependencies essenciais
+  const allowedDevDependencies = [
+    "@babel/core",
+    "@types/node",
+    "@types/react",
+    "typescript",
+    "react-native",
+  ];
+
+  packageJson.devDependencies = Object.keys(packageJson.devDependencies)
+    .filter((dep) => allowedDevDependencies.includes(dep))
+    .reduce((acc, dep) => {
+      acc[dep] = packageJson.devDependencies[dep];
+      return acc;
+    }, {});
 } else {
   console.error("❌ Modo inválido! Use 'storybook' ou 'build'.");
   process.exit(1);
