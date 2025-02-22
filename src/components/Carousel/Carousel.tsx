@@ -34,7 +34,8 @@ const Carousel = ({
   const scrollViewRef = useRef<ScrollView>(null);
   const screenWidth = Dimensions.get("window").width;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollInterval = useRef<NodeJS.Timeout | null>(null);
+  // const scrollInterval = useRef<NodeJS.Timeout | null>(null);
+  const scrollInterval = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const imageWidth = screenWidth * 0.7;
   const sideSpacing = (screenWidth - imageWidth) / 2;
