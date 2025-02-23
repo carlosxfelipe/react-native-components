@@ -125,6 +125,9 @@ if (mode === "storybook") {
       acc[dep] = packageJson.devDependencies[dep];
       return acc;
     }, {});
+
+  // Garante que nenhuma dependência seja instalada dentro do pacote no modo Build
+  packageJson.dependencies = {};
 } else {
   console.error("❌ Modo inválido! Use 'storybook' ou 'build'.");
   process.exit(1);
