@@ -5,9 +5,9 @@
 To install this package, use npm or yarn:
 
 ```sh
-npm install @carlosxfelipe/components
+npm install @carlosxfelipe/components --no-optional
 # or
-yarn add @carlosxfelipe/components
+yarn add @carlosxfelipe/components --ignore-optional
 ```
 
 ## 🚀 How to Use the Carousel
